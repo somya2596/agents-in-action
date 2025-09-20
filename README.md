@@ -45,8 +45,6 @@ RAG (Retrieval-Augmented Generation) is a technique that combines the power of L
 
 ## 📁 Project Structure
 
-
-Day-2/QA-Assistant/
 <img width="760" height="456" alt="image" src="https://github.com/user-attachments/assets/9276dd71-5cc2-4c8d-9ef6-1b486ed7c3f1" />
 
 
