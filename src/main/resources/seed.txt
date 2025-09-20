@@ -1,0 +1,4 @@
+Agents extend Large Language Models (LLMs) with tools, memory, and goals so they can act in the real world.
+Retrieval-Augmented Generation (RAG) reduces hallucinations by fetching relevant facts from a vector database before generation.
+LangChain4j connects LLMs with embeddings, vector stores, tools, and memory to build real-world AI applications.
+FAISS/pgvector/Chroma can be used as vector stores; here we’ll use an in-memory store for simplicity.
