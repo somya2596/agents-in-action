@@ -1,107 +1,141 @@
------------------------------------------🧑‍💻 Day 2 — Hands-On RAG in Java with LangChain4j-----------------------------------------
-                                            Part of the Agents in Action series
+# 🤖 RAG Application with Java & LangChain4j
 
-This project demonstrates how to build a Retrieval-Augmented Generation (RAG) assistant in Java using LangChain4j
+A simple Retrieval-Augmented Generation (RAG) application built with Java and LangChain4j, perfect for learning how RAG systems work.
 
-👉 Unlike most tutorials, this version runs fully local using the AllMiniLmL6V2 embedding model. No OpenAI API key is required.
+## 🎯 What is RAG?
 
-✨ What You’ll Learn
+RAG (Retrieval-Augmented Generation) is a technique that combines the power of Large Language Models (LLMs) with external knowledge retrieval. Instead of relying solely on the LLM's training data, RAG:
 
-How to split and embed documents into vectors
-How to store and search embeddings in memory
-How to retrieve top-k relevant context for a query
-How to generate a simple grounded answer from context
-How to upgrade later to OpenAI or vector DBs
+1. **Retrieves** relevant information from a knowledge base
+2. **Augments** the user's question with this context  
+3. **Generates** a more accurate and contextual response
 
-🧱 Tech Stack
+## 🚀 Features
 
-Java 21
-Maven
-LangChain4j
-langchain4j (core)
-langchain4j-embeddings-all-minilm-l6-v2 (local embeddings)
-langchain4j-open-ai (optional, for LLMs)
-SLF4J Simple (logging)
+- Document loading and text chunking
+- Vector embeddings generation using AllMiniLmL6V2
+- In-memory vector store for similarity search
+- Interactive Q&A interface
+- Demo mode with sample questions
+- Perfect for educational purposes
 
-📂 Project Structure
-QA-Assistant/
-├─ pom.xml
-├─ src/
-│  └─ main/
-│     ├─ java/
-│     │  └─ org/example/
-│     │     ├─ Main.java          # Entry point / CLI
-│     │     └─ RagBootstrap.java  # RAG pipeline setup
-│     └─ resources/
-│        └─ seed.txt              # Knowledge base
-└─ README.md
+## 🛠️ Prerequisites
+
+- Java 21 or higher
+- Maven 3.6 or higher
+
+## �� Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/somya2596/agents-in-action.git
+   cd agents-in-action/Day-2/QA-Assistant
+   ```
+
+2. **Compile and run**
+   ```bash
+   mvn clean compile exec:java
+   ```
+
+3. **Ask specific questions**
+   ```bash
+   mvn exec:java -Dexec.args="What is RAG?"
+   mvn exec:java -Dexec.args="How do agents work with LLMs?"
+   ```
+
+## 📁 Project Structure
+Day-2/QA-Assistant/
+├── pom.xml # Maven configuration
+├── src/
+│ └── main/
+│ ├── java/org/example/
+│ │ ├── Main.java # Main application entry point
+│ │ └── RagBootstrap.java # Core RAG implementation
+│ └── resources/
+│ └── seed.txt # Sample knowledge base
+└── target/ # Compiled classes
 
 
-🚀 Getting Started
- 1. Clone the repo
-   git clone https://github.com/<your-username>/agents-in-action-day2.git
-   cd agents-in-action-day2
+## 🔧 How It Works
 
- 2.  Verify prerequisites
-      java -version
-      mvn -v
+1. **Document Processing**: Loads and splits documents into manageable chunks
+2. **Embedding Generation**: Creates vector embeddings for each text chunk
+3. **Vector Storage**: Stores embeddings in an in-memory vector store
+4. **Query Processing**: 
+   - Converts user questions to embeddings
+   - Finds most similar document chunks
+   - Combines context with question
+   - Generates contextual responses
 
- 3. Build :  mvn clean compile
- 4. Run in demo mode: mvn exec:java
- 5. Ask your own Question
-    mvn exec: java -Dexec.args= "What is RAG"
+## �� Key Concepts Demonstrated
 
- 🧠 How It Works
+- **Document Chunking**: Breaking large documents into smaller, searchable pieces
+- **Vector Embeddings**: Converting text to numerical representations for similarity search
+- **Semantic Search**: Finding relevant information based on meaning, not just keywords
+- **Context Augmentation**: Enhancing LLM responses with retrieved knowledge
 
-Load KB → seed.txt from resources
-Split → text split into 300-char segments
-Embed → each segment embedded using AllMiniLmL6V2EmbeddingModel
-Store → embeddings stored in InMemoryEmbeddingStore
-Retrieve → top-2 relevant segments fetched for a query
-Answer → rule-based answer generated from retrieved context
+## 📚 Sample Knowledge Base
 
-📊 Example Output
-Building your First RAG Application with Java & LangChain4j
+The application comes with a sample knowledge base (`seed.txt`) containing:
+
+- Information about RAG and its benefits
+- Details about agents and LLMs
+- Vector store options (FAISS, pgvector, Chroma)
+- LangChain4j capabilities
+
+## 🎯 Perfect for Learning
+
+This project is ideal for:
+- Understanding RAG fundamentals
+- Learning about vector databases
+- Exploring LangChain4j capabilities
+- Building your first AI application
+
+## �� Medium Article
+
+This code accompanies the Medium article: **"From LangChain to RAG: Building Your First AI Application"**
+
+## 🚀 Quick Start
+
+```bash
+# Navigate to the project
+cd agents-in-action/Day-2/QA-Assistant
+
+# Run the demo
+mvn clean compile exec:java
+
+# Ask a specific question
+mvn exec:java -Dexec.args="What is RAG?"
+```
+
+## 🔍 Example Output
+�� Building Your First RAG Application with Java & LangChain4j
 ======================================================================
-Loaded 4 document segments into vector store
-
+�� Initializing RAG system...
+✅ Loaded 1 document segments into vector store
+🤖 RAG Assistant Demo
+==================================================
+==================================================
 Question: What is RAG?
 Based on the retrieved context:
-
 Context:
-Retrieval-Augmented Generation (RAG) reduces hallucinations...
-
-Answer: RAG reduces hallucinations by combining LLMs with retrieval from a vector store.
-
-
-📑 Knowledge Base
-Default seed.txt includes:
-
-Agents extend Large Language Models (LLMs) with tools, memory, and goals...
-RAG reduces hallucinations by fetching relevant facts...
-LangChain4j connects LLMs with embeddings, vector stores, tools...
-FAISS/pgvector/Chroma can be used as vector stores...
-
-👉 Replace this file with your own knowledge base.
-
-🔌 Upgrade Path
-
-Currently, the assistant uses a rule-based answer generator.
-To use an LLM for richer answers:
-Add your OpenAI API key:
-export OPENAI_API_KEY=sk-...
-Swap generateResponse() with an OpenAiChatModel call.
-Replace in-memory store with Chroma, FAISS, or pgvector for persistence.
-
-🔗 Series Context
-
-This repo is part of the Agents in Action series:
-
-Day 1 → How AI and LLMs Actually Work (And Why Agents Are the Next Big Leap)
-Day 2 → Hands-On RAG in Java with LangChain4j (this repo)
-Day 3 (coming soon) → Vector Databases for Long-Term Memory
-
-Read the full series on Medium : https://medium.com/technology-hits/agents-in-action-a-new-learning-series-on-building-context-aware-ai-6d5c008f19ca
+Retrieval-Augmented Generation (RAG) reduces hallucinations by fetching relevant facts from a vector database before generation.
+Your question: What is RAG?
+Answer: RAG (Retrieval-Augmented Generation) reduces hallucinations by fetching relevant facts from a vector database before generation. It combines the power of LLMs with external knowledge retrieval.
 
 
 
+
+## 🤝 Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## 🔗 Related Resources
+
+- [LangChain4j Documentation](https://github.com/langchain4j/langchain4j)
+- [RAG Paper](https://arxiv.org/abs/2005.11401)
+- [Vector Databases Explained](https://www.pinecone.io/learn/vector-database/)
+
+---
+
+**Built with ❤️ for the AI learning community**
