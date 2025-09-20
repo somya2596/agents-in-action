@@ -24,7 +24,7 @@ RAG (Retrieval-Augmented Generation) is a technique that combines the power of L
 - Java 21 or higher
 - Maven 3.6 or higher
 
-## �� Installation & Setup
+## Installation & Setup
 
 1. **Clone the repository**
    ```bash
@@ -67,7 +67,7 @@ Day-2/QA-Assistant/
    - Combines context with question
    - Generates contextual responses
 
-## �� Key Concepts Demonstrated
+## Key Concepts Demonstrated
 
 - **Document Chunking**: Breaking large documents into smaller, searchable pieces
 - **Vector Embeddings**: Converting text to numerical representations for similarity search
@@ -91,7 +91,7 @@ This project is ideal for:
 - Exploring LangChain4j capabilities
 - Building your first AI application
 
-## �� Medium Article
+##  Medium Article
 
 This code accompanies the Medium article: **"From LangChain to RAG: Building Your First AI Application"**
 
