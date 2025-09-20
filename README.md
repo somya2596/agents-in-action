@@ -44,6 +44,8 @@ RAG (Retrieval-Augmented Generation) is a technique that combines the power of L
    ```
 
 ## 📁 Project Structure
+
+
 Day-2/QA-Assistant/
 ├── pom.xml # Maven configuration
 ├── src/
