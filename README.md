@@ -47,15 +47,8 @@ RAG (Retrieval-Augmented Generation) is a technique that combines the power of L
 
 
 Day-2/QA-Assistant/
-├── pom.xml # Maven configuration
-├── src/
-│ └── main/
-│ ├── java/org/example/
-│ │ ├── Main.java # Main application entry point
-│ │ └── RagBootstrap.java # Core RAG implementation
-│ └── resources/
-│ └── seed.txt # Sample knowledge base
-└── target/ # Compiled classes
+<img width="760" height="456" alt="image" src="https://github.com/user-attachments/assets/9276dd71-5cc2-4c8d-9ef6-1b486ed7c3f1" />
+
 
 
 ## 🔧 How It Works
@@ -111,9 +104,9 @@ mvn exec:java -Dexec.args="What is RAG?"
 ```
 
 ## 🔍 Example Output
-�� Building Your First RAG Application with Java & LangChain4j
+Building Your First RAG Application with Java & LangChain4j
 ======================================================================
-�� Initializing RAG system...
+Initializing RAG system...
 ✅ Loaded 1 document segments into vector store
 🤖 RAG Assistant Demo
 ==================================================
